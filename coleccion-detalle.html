@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Colección - MetaMapa</title>
+  <link rel="icon" type="image/png" href="map-icon.png">
+  <link 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" 
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">MetaMapa</a>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item"><a class="nav-link active" href="colecciones.html">Colecciones</a></li>
+          <li class="nav-item"><a class="nav-link" href="hechos.html">Hechos</a></li>
+          <li class="nav-item"><a class="nav-link" href="mapa.html">Mapa interactivo</a></li>
+        </ul>
+        <div class="d-flex">
+          <a href="login.html" class="btn btn-outline-light me-2">Iniciar Sesión</a>
+          <a href="registro.html" class="btn btn-primary">Registrarse</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Colección Detalle -->
+  <div class="container my-5">
+    <h1 class="text-center mb-4">Incendios forestales en Argentina 2025</h1>
+    <p class="text-center">Hechos recopilados sobre incendios forestales ocurridos en distintas regiones del país durante 2025.</p>
+
+    <div class="row g-4">
+      <!-- Hecho de ejemplo -->
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <img src="images/incendio.jpg" class="card-img-top" alt="Incendio en Córdoba">
+          <div class="card-body">
+            <h5 class="card-title">Incendio Forestal en Córdoba</h5>
+            <p class="card-text">Se registró un incendio forestal de gran magnitud en las sierras cordobesas.</p>
+            <span class="badge bg-danger">Incendio</span>
+            <div class="mt-3">
+              <a href="hecho-detalle.html" class="btn btn-sm btn-outline-primary">Ver detalle</a>
+            </div>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">📍 Córdoba, Argentina<br>📅 12/08/2025</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- Podés repetir más hechos de la colección -->
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-light py-3 text-center">
+    <p class="mb-0">&copy; 2025 MetaMapa - Todos los derechos reservados</p>
+  </footer>
+
+  <script 
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js">
+  </script>
+</body>
+</html>

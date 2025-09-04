@@ -3,9 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mapa de Hechos - MetaMapa</title>
-  <link rel="icon" type="image/png" href="map-icon.png">
-
+  <title>Detalle de Hecho - MetaMapa</title>
 
   <!-- Bootstrap CSS -->
   <link 
@@ -21,17 +19,18 @@
 
   <style>
     #map {
-      height: 600px;
+      height: 300px;
       border-radius: 10px;
+      margin-top: 1rem;
     }
-
+    
     html, body {
       height: 100%;
       margin: 0;
       display: flex;
       flex-direction: column;
     }
-
+  
     main {
       flex: 1; /* ocupa todo el espacio disponible */
     }
@@ -47,7 +46,7 @@
         <ul class="navbar-nav me-auto">
           <li class="nav-item"><a class="nav-link" href="colecciones.html">Colecciones</a></li>
           <li class="nav-item"><a class="nav-link" href="hechos.html">Hechos</a></li>
-          <li class="nav-item"><a class="nav-link active" href="mapa.html">Mapa interactivo</a></li>
+          <li class="nav-item"><a class="nav-link" href="mapa.html">Mapa interactivo</a></li>
         </ul>
         <div class="d-flex">
           <a href="login.html" class="btn btn-outline-light me-2">Iniciar Sesión</a>
@@ -57,60 +56,51 @@
     </div>
   </nav>
 
- 
   <main>
-    <div class="container my-5">
-      <h1 class="text-center mb-4">Mapa Interactivo de Hechos</h1>
-      <div id="map"></div>
+  <!-- Detalle del Hecho -->
+  <div class="container my-5">
+    <h1 class="mb-4">Incendio Forestal en Córdoba</h1>
+    <div class="row">
+      <div class="col-md-6">
+        <img src="images/incendio.jpg" class="img-fluid rounded shadow-sm" alt="Incendio forestal en Córdoba">
+        <!-- Mini Mapa -->
+        <div id="map"></div>
+      </div>
+      <div class="col-md-6">
+        <p><strong>Categoría:</strong> <span class="badge bg-danger">Incendio</span></p>
+        <p><strong>Fecha:</strong> 12/08/2025</p>
+        <p><strong>Ubicación:</strong> Córdoba, Argentina</p>
+        <p><strong>Descripción:</strong> Se registró un incendio forestal de gran magnitud en las sierras cordobesas, afectando miles de hectáreas y requiriendo la intervención de bomberos de varias provincias.</p>
+        
+        <!-- Navegación -->
+        <div class="mt-4">
+          <a href="hechos.html" class="btn btn-outline-secondary me-2">⬅ Ver todos los Hechos</a>
+          <a href="coleccion-detalle.html" class="btn btn-outline-primary">⬅ Volver a la Colección</a>
+        </div>
+      </div>
     </div>
+  </div>
   </main>
-
+  
+  <!-- Footer -->
   <footer class="bg-dark text-light py-3 text-center">
     <p class="mb-0">&copy; 2025 MetaMapa - Todos los derechos reservados</p>
   </footer>
- 
+
   <!-- Leaflet JS -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-
   <script>
-    // Inicializar mapa centrado en Argentina
-    const map = L.map('map').setView([-34.6, -58.4], 5);
+    // Coordenadas de Córdoba
+    const map = L.map('map').setView([-31.4201, -64.1888], 10);
 
-    // Capa de OpenStreetMap
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
+      attribution: '&copy; OpenStreetMap contributors'
     }).addTo(map);
 
-    // Hechos hardcodeados
-    const hechos = [
-      {
-        titulo: "Incendio Forestal en Córdoba",
-        categoria: "Incendio",
-        fecha: "12/08/2025",
-        ubicacion: [ -31.4201, -64.1888 ] // Córdoba
-      },
-      {
-        titulo: "Contaminación en Río Reconquista",
-        categoria: "Contaminación",
-        fecha: "28/07/2025",
-        ubicacion: [ -34.4667, -58.7 ] // Bs As
-      },
-      {
-        titulo: "Manifestación por derechos humanos",
-        categoria: "Derechos Humanos",
-        fecha: "05/06/2025",
-        ubicacion: [ -32.9468, -60.6393 ] // Rosario
-      }
-    ];
-
-    // Agregar marcadores
-    hechos.forEach(h => {
-      L.marker(h.ubicacion)
-        .addTo(map)
-        .bindPopup(`<strong>${h.titulo}</strong><br>
-                    Categoría: ${h.categoria}<br>
-                    Fecha: ${h.fecha}`);
-    });
+    L.marker([-31.4201, -64.1888])
+      .addTo(map)
+      .bindPopup("<strong>Incendio Forestal en Córdoba</strong><br>12/08/2025")
+      .openPopup();
   </script>
 </body>
 </html>

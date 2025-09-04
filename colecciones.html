@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Colecciones - MetaMapa</title>
+  <link rel="icon" type="image/png" href="map-icon.png">
+  <link 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" 
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">MetaMapa</a>
+      <button 
+        class="navbar-toggler" 
+        type="button" 
+        data-bs-toggle="collapse" 
+        data-bs-target="#navbarNav" 
+        aria-controls="navbarNav" 
+        aria-expanded="false" 
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="colecciones.html">Colecciones</a></li>
+          <li class="nav-item"><a class="nav-link" href="hechos.html">Hechos</a></li>
+          <li class="nav-item"><a class="nav-link" href="mapa.html">Mapa interactivo</a></li>
+        </ul>
+        <div class="d-flex">
+          <a href="login.html" class="btn btn-outline-light me-2">Iniciar Sesión</a>
+          <a href="registro.html" class="btn btn-primary">Registrarse</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Colecciones -->
+  <div class="container my-5">
+    <h1 class="text-center mb-4">Colecciones</h1>
+    <div class="row g-4">
+
+      <!-- Colección 1 -->
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Incendios forestales en Argentina 2025</h5>
+            <p class="card-text">Colección de hechos relacionados a incendios forestales ocurridos en Argentina durante el año 2025.</p>
+            <p><span class="badge bg-danger">1 hechos</span></p>
+            <a href="coleccion-detalle.html" class="btn btn-sm btn-outline-primary">Ver detalles</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Colección 2 -->
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Contaminación ambiental</h5>
+            <p class="card-text">Casos reportados de contaminación en ríos, mares y zonas urbanas.</p>
+            <p><span class="badge bg-warning text-dark">8 hechos</span></p>
+            <a href="coleccion-detalle.html" class="btn btn-sm btn-outline-primary">Ver detalles</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Colección 3 -->
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Derechos Humanos</h5>
+            <p class="card-text">Manifestaciones y hechos vinculados a la defensa de los derechos humanos.</p>
+            <p><span class="badge bg-primary">15 hechos</span></p>
+            <a href="coleccion-detalle.html" class="btn btn-sm btn-outline-primary">Ver detalles</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-light py-3 text-center">
+    <p class="mb-0">&copy; 2025 MetaMapa - Todos los derechos reservados</p>
+  </footer>
+
+  <script 
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js">
+  </script>
+</body>
+</html>
